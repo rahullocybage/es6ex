@@ -9,12 +9,19 @@ var add =function(a,b){
     },3000);
 }
 }
+var sub =function(a,b){
+    this.a = a,
+    this.b = b,
+    this.subs = function() {
+    console.log(this);
+    
+    setTimeout(() =>{
+        console.log(this.a-this.b);
+    },3000);
+}
+}
 
-let add1 = new add(34,54);
+let add1 = new add(54,34);
+let subs = new sub(54,34);
 add1.addi();
-//     addition :function() {
-
-//         return "The addition of "+this.a+" and "+this.b+" is "+(this.a +this.b);
-//     }
-// };
-// console.log(add.addition());
+subs.subs();
